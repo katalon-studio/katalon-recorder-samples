@@ -1,1 +1,3 @@
-For a demo please see https://www.youtube.com/watch?v=MXFFshKtPm8.
+For a demo please see https://www.youtube.com/watch?v=MXFFshKtPm8. Visit https://docs.katalon.com/x/KQHR for more details.
+
+Also check out Katalon Studio – a free and complete automation testing solution for Web, Mobile, and API testing with modern methodologies (Data-Driven Testing, TDD/BDD, Page Object Model, etc.) as well as advanced integration (JIRA, qTest, Slack, CI, Katalon Analytics, etc.). Learn more about Katalon Studio features at https://www.katalon.com.
