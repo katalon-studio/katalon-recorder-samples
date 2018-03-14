@@ -200,6 +200,36 @@
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
+<tr><td rowspan="1" colspan="3">Nested loops</td></tr>
+</thead>
+<tbody>
+<tr><td>storeEval</td><td>5<datalist><option>10</option><option>2</option><option>5</option></datalist></td><td>pages</td>
+</tr>
+<tr><td>storeEval</td><td>1<datalist><option>1</option></datalist></td><td>pageIndex</td>
+</tr>
+<tr><td>while</td><td>${pageIndex}&lt;${pages}<datalist><option>${pageIndex}&lt;${pages}</option><option>pageIndex&lt;pages</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>${pageIndex} + 1<datalist><option>${pageIndex} + 1</option></datalist></td><td>pageIndex</td>
+</tr>
+<tr><td>store</td><td>page_${pageIndex}<datalist><option>page_${pageIndex}</option></datalist></td><td>url</td>
+</tr>
+<tr><td>store</td><td>5<datalist><option>10</option><option>5</option></datalist></td><td>rows</td>
+</tr>
+<tr><td>store</td><td>0<datalist><option>0</option></datalist></td><td>rowIndex</td>
+</tr>
+<tr><td>while</td><td>${rowIndex}&lt;${rows}<datalist><option>${rowIndex}&lt;${rows}</option><option>rowIndex&lt;rows</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>${rowIndex} + 1<datalist><option>${rowIndex} + 1</option></datalist></td><td>rowIndex</td>
+</tr>
+<tr><td>store</td><td>click_${rowIndex}<datalist><option>click_${rowIndex}</option></datalist></td><td>click</td>
+</tr>
+<tr><td>endWhile</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+<tr><td>endWhile</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
 <tr><td rowspan="1" colspan="3">Test Data</td></tr>
 </thead>
 <tbody>
@@ -236,6 +266,18 @@
 <tr><td>assertText</td><td>id=gender-error<datalist><option>id=gender-error</option><option>//label[@id='gender-error']</option><option>//form[@id='infoForm']/div[3]/div/label</option><option>//div[3]/div/label</option><option>css=#gender-error</option></datalist></td><td>Execution will stop after this check.</td>
 </tr>
 <tr><td>verifyText</td><td>id=gender-error<datalist><option>id=gender-error</option><option>//label[@id='gender-error']</option><option>//form[@id='infoForm']/div[3]/div/label</option><option>//div[3]/div/label</option><option>css=#gender-error</option></datalist></td><td>This step will not execute.</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">waitFor...</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForElementPresent</td><td>id=waitedForElement<datalist><option>id=waitedForElement</option><option>//div[@id='waitedForElement']</option><option>//div[@id='container']/div</option><option>//div[2]/div</option><option>css=#waitedForElement</option></datalist></td><td></td>
+</tr>
+<tr><td>echo</td><td>Done!<datalist><option>Done!</option></datalist></td><td></td>
 </tr>
 </tbody></table>
 </body>
