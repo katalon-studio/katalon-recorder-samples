@@ -99,9 +99,21 @@
 </tr>
 <tr><td>echo</td><td>Added by ${author}. Time: ${time}. Page: ${page}.<datalist><option>Added by ${author}. Time: ${time}. Page: ${page}.</option></datalist></td><td></td>
 </tr>
+<tr><td>storeEval</td><td>storedVars['author'] + "${page}"<datalist><option>storedVars['author'] + ${page}</option><option>storedVars['author'] + "${page}"</option></datalist></td><td>demo</td>
+</tr>
+<tr><td>echo</td><td>${demo}<datalist><option>${demo}</option></datalist></td><td></td>
+</tr>
 <tr><td>click</td><td>id=comment<datalist><option>id=comment</option><option>name=comment</option><option>//textarea[@id='comment']</option><option>//form[@id='infoForm']/div[12]/div/textarea</option><option>//textarea</option><option>css=#comment</option></datalist></td><td></td>
 </tr>
 <tr><td>type</td><td>id=comment<datalist><option>id=comment</option><option>name=comment</option><option>//textarea[@id='comment']</option><option>//form[@id='infoForm']/div[12]/div/textarea</option><option>//textarea</option><option>css=#comment</option></datalist></td><td>Added by ${author}. Time: ${time}. Page: ${page}.</td>
+</tr>
+<tr><td>storeEval</td><td>1<datalist><option>1</option></datalist></td><td>a</td>
+</tr>
+<tr><td>storeEval</td><td>a+1<datalist><option>a+1</option></datalist></td><td>b</td>
+</tr>
+<tr><td>storeEval</td><td>b+1<datalist><option>b+1</option></datalist></td><td>c</td>
+</tr>
+<tr><td>type</td><td>id=comment<datalist><option>id=comment</option></datalist></td><td>${a} ${b} ${c}</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
@@ -226,6 +238,32 @@
 <tr><td>endWhile</td><td><datalist><option></option></datalist></td><td></td>
 </tr>
 <tr><td>endWhile</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">gotoIf...gotoLabel...label</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html</option></datalist></td><td></td>
+</tr>
+<tr><td>store</td><td>1<datalist><option>0</option><option>1</option></datalist></td><td>j</td>
+</tr>
+<tr><td>label</td><td>COMMENT<datalist><option>COMMENT</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=comment<datalist><option>id=comment</option><option>name=comment</option><option>//textarea[@id='comment']</option><option>//form[@id='infoForm']/div[12]/div/textarea</option><option>//textarea</option><option>css=#comment</option></datalist></td><td>${j}</td>
+</tr>
+<tr><td>storeEval</td><td>${j}+1<datalist><option>i+1</option><option>j+1</option><option>${j}+1</option></datalist></td><td>j</td>
+</tr>
+<tr><td>gotoIf</td><td>j &lt; 3<datalist><option>i &lt; 3</option><option>j &lt; 3</option></datalist></td><td>COMMENT</td>
+</tr>
+<tr><td>gotoLabel</td><td>END<datalist><option>END</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=comment<datalist><option>id=comment</option></datalist></td><td>skipped</td>
+</tr>
+<tr><td>label</td><td>END<datalist><option>END</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=comment<datalist><option>id=comment</option></datalist></td><td>end</td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
