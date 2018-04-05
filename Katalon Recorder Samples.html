@@ -13,6 +13,8 @@
 <tbody>
 <tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html</option></datalist></td><td></td>
 </tr>
+<tr><td>#</td><td>This is a comment.<datalist><option>This is a comment.</option></datalist></td><td></td>
+</tr>
 <tr><td>click</td><td>id=first-name<datalist><option>id=first-name</option><option>name=firstName</option><option>//input[@id='first-name']</option><option>//form[@id='infoForm']/div/div/input</option><option>//input</option><option>css=#first-name</option></datalist></td><td></td>
 </tr>
 <tr><td>type</td><td>id=first-name<datalist><option>id=first-name</option><option>name=firstName</option><option>//input[@id='first-name']</option><option>//form[@id='infoForm']/div/div/input</option><option>//input</option><option>css=#first-name</option></datalist></td><td>Alex</td>
@@ -93,15 +95,21 @@
 </tr>
 <tr><td>store</td><td>Alex<datalist><option>Alex</option></datalist></td><td>author</td>
 </tr>
+<tr><td>store</td><td>Alex<datalist><option>Alex</option></datalist></td><td>Name with spaces also works. See tab Variables.</td>
+</tr>
 <tr><td>storeEval</td><td>new Date().toString()<datalist><option>new Date().toString()</option></datalist></td><td>time</td>
 </tr>
 <tr><td>storeTitle</td><td>page<datalist><option>page</option></datalist></td><td></td>
 </tr>
 <tr><td>echo</td><td>Added by ${author}. Time: ${time}. Page: ${page}.<datalist><option>Added by ${author}. Time: ${time}. Page: ${page}.</option></datalist></td><td></td>
 </tr>
-<tr><td>storeEval</td><td>storedVars['author'] + "${page}"<datalist><option>storedVars['author'] + ${page}</option><option>storedVars['author'] + "${page}"</option></datalist></td><td>demo</td>
+<tr><td>storeEval</td><td>storedVars['author'] + "${page}"<datalist><option>storedVars['author'] + ${page}</option><option>storedVars['author'] + "${page}"</option></datalist></td><td>demo1</td>
 </tr>
-<tr><td>echo</td><td>${demo}<datalist><option>${demo}</option></datalist></td><td></td>
+<tr><td>echo</td><td>${demo1}<datalist><option>${demo}</option><option>${demo1}</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>author + page<datalist><option>author + page</option></datalist></td><td>demo2</td>
+</tr>
+<tr><td>echo</td><td>${demo2}<datalist><option>${demo2}</option></datalist></td><td></td>
 </tr>
 <tr><td>click</td><td>id=comment<datalist><option>id=comment</option><option>name=comment</option><option>//textarea[@id='comment']</option><option>//form[@id='infoForm']/div[12]/div/textarea</option><option>//textarea</option><option>css=#comment</option></datalist></td><td></td>
 </tr>
@@ -114,6 +122,24 @@
 <tr><td>storeEval</td><td>b+1<datalist><option>b+1</option></datalist></td><td>c</td>
 </tr>
 <tr><td>type</td><td>id=comment<datalist><option>id=comment</option></datalist></td><td>${a} ${b} ${c}</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Manipulate page's JavaScript variables</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>return window.$.fn.jquery<datalist><option>window.$.fn.jquery</option><option>return window.$.fn.jquery</option></datalist></td><td>jQueryVersion</td>
+</tr>
+<tr><td>echo</td><td>${jQueryVersion}<datalist><option>${jQueryVersion}</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>window.text=10<datalist><option>window.text=10</option></datalist></td><td></td>
+</tr>
+<tr><td>runScript</td><td>return window.text<datalist><option>return window.text</option></datalist></td><td>text</td>
+</tr>
+<tr><td>echo</td><td>${text}<datalist><option>${text}</option></datalist></td><td></td>
 </tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
@@ -281,6 +307,10 @@
 </tr>
 <tr><td>endLoadVars</td><td><datalist><option></option></datalist></td><td></td>
 </tr>
+<tr><td>storeCsv</td><td>data.csv,1,last<datalist><option>data.csv,1,last</option></datalist></td><td>last</td>
+</tr>
+<tr><td>echo</td><td>${last}<datalist><option>${last}</option></datalist></td><td></td>
+</tr>
 </tbody></table>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
@@ -312,6 +342,22 @@
 </thead>
 <tbody>
 <tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForElementPresent</td><td>id=waitedForElement<datalist><option>id=waitedForElement</option><option>//div[@id='waitedForElement']</option><option>//div[@id='container']/div</option><option>//div[2]/div</option><option>css=#waitedForElement</option></datalist></td><td></td>
+</tr>
+<tr><td>echo</td><td>Done!<datalist><option>Done!</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">waitFor... with custom timeout</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html<datalist><option>https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/delay.html</option></datalist></td><td></td>
+</tr>
+<tr><td>#</td><td>The element will show up in 10 seconds, but we only wait 2 seconds<datalist><option>The element will show up in 10 seconds, but we only wait 2 seconds</option></datalist></td><td></td>
+</tr>
+<tr><td>setTimeout</td><td>2000<datalist><option>2000</option></datalist></td><td></td>
 </tr>
 <tr><td>waitForElementPresent</td><td>id=waitedForElement<datalist><option>id=waitedForElement</option><option>//div[@id='waitedForElement']</option><option>//div[@id='container']/div</option><option>//div[2]/div</option><option>css=#waitedForElement</option></datalist></td><td></td>
 </tr>
