@@ -1,9 +1,4 @@
-LocatorBuilders.add('custom locator id goes here', function(e) {
-    if (e.id) {
-        return "css=" + e.tagName + '#' + e.id;
-    }
-    return null;
-});
+// Usage: Add this to Extension Scripts, restart Katalon Recorder, and refresh the browser tab
 
 Selenium.prototype.getTextLength = function(locator) {
     return this.getText(locator).length;
